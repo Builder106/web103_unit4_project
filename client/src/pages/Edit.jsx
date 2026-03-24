@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { getItem, updateItem } from '../services/itemsApi'
 import { OPTIONS } from '../lib/options.js'
 import { previewIcon, totalPrice as computeTotal } from '../lib/pricing.js'
-import { validateSubmission } from '../lib/validation.js'
+import { isSlipOnLaceStyle, validateSubmission } from '../lib/validation.js'
 
 export default function Edit() {
     const { id } = useParams()
@@ -32,7 +32,7 @@ export default function Edit() {
     const laceChoices = useMemo(() => {
         if (!s) return OPTIONS.laceStyle
         if (s.soleStyle === 'platform') {
-            return OPTIONS.laceStyle.filter((o) => o.value !== 'none')
+            return OPTIONS.laceStyle.filter((o) => !isSlipOnLaceStyle(o.value))
         }
         return OPTIONS.laceStyle
     }, [s])
@@ -40,7 +40,7 @@ export default function Edit() {
     const onChange = (e) => {
         const { name, value } = e.target
         const next = { ...s, [name]: value }
-        if (name === 'soleStyle' && value === 'platform' && s.laceStyle === 'none') {
+        if (name === 'soleStyle' && value === 'platform' && isSlipOnLaceStyle(s.laceStyle)) {
             next.laceStyle = 'flat'
         }
         setS(next)

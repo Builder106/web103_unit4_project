@@ -1,6 +1,8 @@
 import { pool } from '../config/database.js'
 
-const hasInvalidCombo = ({ soleStyle, laceStyle }) => soleStyle === 'platform' && laceStyle === 'none'
+const isSlipOnLaceStyle = (laceStyle) => laceStyle === 'none' || laceStyle === 'elastic'
+
+const hasInvalidCombo = ({ soleStyle, laceStyle }) => soleStyle === 'platform' && isSlipOnLaceStyle(laceStyle)
 
 export const getCars = async (_, res) => {
     try {

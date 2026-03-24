@@ -6,7 +6,8 @@
     "start": "cd server && node server",
     "build": "cd client && vite build",
     "test": "node --test client/src/lib/*.test.js",
-    "db:reset": "cd server && node config/reset.js"
+    "db:reset": "cd server && node config/reset.js",
+    "db:seed": "cd server && node config/seed.js"
   },
   "dependencies": {
     "@picocss/pico": "^1.5.7",

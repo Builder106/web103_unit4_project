@@ -44,7 +44,7 @@ GIF created with Kap
 
 ## Notes
 
-The backend includes a `db:reset` script to create the `custom_items` table quickly after setting environment variables in `server/.env`.
+The backend includes a `db:reset` script to create the `custom_items` table and a `db:seed` script to insert sample pairs when the table is empty (run `npm run db:reset` then `npm run db:seed` after configuring `server/.env`).
 
 ## License
 
