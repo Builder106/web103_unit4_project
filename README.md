@@ -38,9 +38,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with Kap
+[![Video Walkthrough](https://i.imgur.com/Pe94vxQ.gif)](https://imgur.com/a/web103-sole-story-week-5-JKZEHaJ)
 
 ## Notes
 
